@@ -1,16 +1,51 @@
-# React + Vite
+Создайте компонент RegistrationForm.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Инициализируйте форму с помощью useForm. Настройте mode: 'onChange' или 'onBlur' для валидации при изменении/потере фокуса (чтобы проверка логина срабатывала сразу).
 
-Currently, two official plugins are available:
+Поля формы и базовая валидация:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Логин (Username):
+Обязательное поле.
+Минимум 4 символа, максимум 20.
+Только латиница, цифры и нижнее подчеркивание (регулярное выражение /^[A-Za-z0-9_]+$/).
 
-## React Compiler
+Email:
+Обязательное поле.
+Корректный формат email.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Имя (FirstName) и Фамилия (LastName):
+Оба поля обязательные.
+Только буквы (кириллица или латиница), минимум 2 символа.
 
-## Expanding the ESLint configuration
+Пароль:
+Обязательное поле.
+Минимум 6 символов.
+Должен содержать хотя бы одну заглавную букву и одну цифру.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Подтверждение пароля:
+Обязательное поле.
+Кастомная валидация: должно совпадать с полем password.
+
+Возраст (Age):
+Обязательное поле.
+Число от 18 до 100.
+
+Телефон:
+Обязательное поле.
+Формат(маска): +65XXXXXX XX-XX.
+Валидация: должно содержать ровно 10 цифр после кода.
+
+Согласие с правилами:
+Чекбокс, обязательное поле (должен быть отмечен).
+Должно быть отмечено (используйте required).
+
+Асинхронная проверка логина(nickname) через:
+В поле username добавьте асинхронную валидацию с помощью validate.
+Напишите асинхронную функцию, которая делает GET-запрос к mockapi
+
+register — для регистрации полей.
+handleSubmit — для обработки отправки.
+formState — для доступа к errors, isValid, isValidating.
+watch — для отслеживания значения поля пароля (чтобы сравнивать с подтверждением).
+reset — для сброса формы после успешной отправки.
+Кастомная валидация через validate.

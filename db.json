@@ -1,3 +1,15 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "3666",
+      "username": "testuser",
+      "email": "test@mail.com",
+      "firstName": "Test",
+      "lastName": "User",
+      "password": "Test123",
+      "age": 25,
+      "phone": "+65123456 78-90",
+      "agree": true
+    }
+  ]
 }

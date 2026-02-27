@@ -3,7 +3,7 @@ import { checkUsernameAvailable, createUser } from "../api/usersApi";
 
 const USERNAME_RE = /^[A-Za-z0-9_]+$/;
 const NAME_RE = /^[A-Za-zА-Яа-яЁё]+$/;
-const PHONE_RE = /^\+65\d{6}\s\d{2}-\d{2}$/; // +65XXXXXX XX-XX (6 цифр после +65)
+const PHONE_RE = /^\+65\d{6}\s\d{2}-\d{2}$/;
 
 export default function RegistrationForm() {
   const {
